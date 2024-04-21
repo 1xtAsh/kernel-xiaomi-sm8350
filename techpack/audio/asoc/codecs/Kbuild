@@ -235,7 +235,7 @@ INCS +=		$(COMMON_INC) \
 
 EXTRA_CFLAGS += $(INCS)
 
-ifeq ($(TARGET_PRODUCT), taoyao)
+ifdef CONFIG_MACH_XIAOMI_TAOYAO
 	CDEFINES += -DCONFIG_TARGET_PRODUCT_TAOYAO
 endif
 
@@ -279,27 +279,27 @@ ifeq ($(KERNEL_BUILD), 1)
 	obj-y	+= rouleur/
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), venus star mars haydn odin vili))
+ifneq ($(filter y, $(CONFIG_MACH_XIAOMI_VENUS) $(CONFIG_MACH_XIAOMI_STAR) $(CONFIG_MACH_XIAOMI_MARS) $(CONFIG_MACH_XIAOMI_HAYDN) $(CONFIG_MACH_XIAOMI_ODIN) $(CONFIG_MACH_XIAOMI_VILI)),)
 	obj-y	+= cs35l41/
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), cetus))
+ifdef CONFIG_MACH_XIAOMI_CETUS
 	obj-y	+= cs35l45/
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), renoir lisa))
+ifneq ($(filter y, $(CONFIG_MACH_XIAOMI_RENOIR) $(CONFIG_MACH_XIAOMI_LISA)),)
 	obj-y	+= tfa98xx/
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), taoyao))
+ifdef CONFIG_MACH_XIAOMI_TAOYAO
 	obj-y	+= tfa9874/
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), mona zijin))
+ifneq ($(filter y, $(CONFIG_MACH_XIAOMI_MONA) $(CONFIG_MACH_XIAOMI_ZIJIN)),)
 	obj-y	+= aw88263s/
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), redwood))
+ifdef CONFIG_MACH_XIAOMI_REDWOOD
 	obj-y	+= aw88263s_m20/
 endif
 
