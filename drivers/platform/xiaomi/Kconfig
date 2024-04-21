@@ -1,0 +1,96 @@
+# Xiaomi configuration options
+
+config MACH_XIAOMI
+	bool "Xiaomi device"
+	depends on ARCH_QCOM
+	help
+	  Support for Xiaomi products
+
+config MACH_XIAOMI_SM8350
+	bool "Xiaomi SM8350"
+	depends on ARCH_QCOM
+	select MACH_XIAOMI
+	help
+	  Support for Xiaomi SM8350 devices
+
+menu "Xiaomi board selection"
+
+	config MACH_XIAOMI_CETUS
+		bool "Xiaomi cetus board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Mi Mix Fold
+
+	config MACH_XIAOMI_HAYDN
+		bool "Xiaomi haydn board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Redmi K40 Pro / Mi 11X Pro / Mi 11i
+
+	config MACH_XIAOMI_LISA
+		bool "Xiaomi lisa board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Xiaomi 11 Lite 5G NE / Mi 11 LE
+
+	config MACH_XIAOMI_MARS
+		bool "Xiaomi mars board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Mi 11 Pro
+
+	config MACH_XIAOMI_MONA
+		bool "Xiaomi mona board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Xiaomi Civi
+
+	config MACH_XIAOMI_ODIN
+		bool "Xiaomi odin board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Xiaomi MIX 4
+
+	config MACH_XIAOMI_REDWOOD
+		bool "Xiaomi redwood board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Redmi Note 12 Pro Speed / POCO X5 Pro 5G
+
+	config MACH_XIAOMI_RENOIR
+		bool "Xiaomi renoir board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Mi 11 Lite 5G
+
+	config MACH_XIAOMI_STAR
+		bool "Xiaomi star board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Mi 11 Ultra
+
+	config MACH_XIAOMI_TAOYAO
+		bool "Xiaomi taoyao board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Xiaomi 12 Lite
+
+	config MACH_XIAOMI_VENUS
+		bool "Xiaomi venus board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Mi 11
+
+	config MACH_XIAOMI_VILI
+		bool "Xiaomi vili board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Xiaomi 11T Pro
+
+	config MACH_XIAOMI_ZIJIN
+		bool "Xiaomi zijin board"
+		select MACH_XIAOMI_SM8350
+		help
+		  Support for Xiaomi Civi 1S
+
+endmenu
